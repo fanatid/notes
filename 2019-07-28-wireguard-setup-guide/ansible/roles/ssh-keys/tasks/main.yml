@@ -1,0 +1,9 @@
+---
+- name: upload authorized_keys
+  template:
+    src: templates/authorized_keys.j2
+    dest: /root/.ssh/authorized_keys
+    owner: root
+    group: root
+    mode: 0600
+  become: true

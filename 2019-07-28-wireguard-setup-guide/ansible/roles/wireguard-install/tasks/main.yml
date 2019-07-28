@@ -1,0 +1,38 @@
+---
+- block:
+  - name: install software-properties-common
+    apt:
+      name:
+        - software-properties-common
+      state: present
+      cache_valid_time: 86400
+
+  - name: add wireguard apt repository
+    apt_repository:
+      repo: ppa:wireguard/wireguard
+
+  - name: fetch current kernel version
+    shell: uname -r
+    register: kernelversion
+    changed_when: false
+
+  - name: install wireguard
+    apt:
+      name:
+        - linux-headers-generic
+        - linux-headers-{{ kernelversion.stdout }}
+        - wireguard
+      state: present
+      cache_valid_time: 86400
+
+  - name: Add wireguard module
+    modprobe:
+      name: wireguard
+      state: present
+
+  - name: add ip forwarding to sysctl.conf
+    sysctl:
+      name: net.ipv4.ip_forward
+      value: 1
+
+  become: true

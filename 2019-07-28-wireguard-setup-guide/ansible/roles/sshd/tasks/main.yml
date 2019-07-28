@@ -1,0 +1,10 @@
+---
+- name: upload sshd_config
+  copy:
+    src: files/sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+  become: true
+  notify: restart sshd

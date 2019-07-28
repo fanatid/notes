@@ -1,0 +1,5 @@
+---
+- hosts: "{{ target | default('all') }}"
+  gather_facts: false
+  roles:
+    - name: ssh-keys

@@ -2,6 +2,8 @@ Some notes stored in [git](https://git-scm.com/) ([Markdown](https://daringfireb
 
 ### Notes
 
+  - [WireGuard setup guide](https://github.com/fanatid/notes/tree/master/2019-07-28-wireguard-setup-guide) (2019-07-28)
+
 ### Projects
 
   - [log2json2stdout](https://github.com/fanatid/log2json2stdout) — simple logger, just JSON to STDOUT
@@ -12,4 +14,4 @@ Some notes stored in [git](https://git-scm.com/) ([Markdown](https://daringfireb
 
 ### Other
 
-  - [3rd party bookmarked notes](3rd-party-bookmarked-notes.md)
+  - [3rd party bookmarked notes](./3rd-party-bookmarked-notes.md)

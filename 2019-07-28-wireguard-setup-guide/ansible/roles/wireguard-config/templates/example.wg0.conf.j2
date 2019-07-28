@@ -1,0 +1,12 @@
+[Interface]
+Address = 10.0.2.1/24
+ListenPort = 51820
+PostUp = wg set %i private-key <(cat /etc/wireguard/%i.conf.privatekey); iptables -t nat -A POSTROUTING -o ens10 -s 10.0.0.0/8 -j MASQUERADE
+PostDown = iptables -t nat -D POSTROUTING -o ens10 -s 10.0.0.0/8 -j MASQUERADE
+{% for user in users %}
+
+# {{ user.comment }}
+[Peer]
+PublicKey = {{ user.publickey }}
+AllowedIPs = {{ user.ips }}
+{% endfor %}

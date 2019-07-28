@@ -1,0 +1,60 @@
+---
+- block:
+  # Create Keys if not exists
+  - name: check wg keys
+    stat:
+      path: /etc/wireguard/{{ wg_name }}.conf.privatekey
+    register: wg_privkey
+
+  - name: generate keys
+    shell: |
+      cd /etc/wireguard
+      wg genkey | tee {{ wg_name }}.conf.privatekey | wg pubkey > {{ wg_name }}.conf.publickey
+      chmod 600 {{ wg_name }}.conf*
+    when: wg_privkey.stat.exists == False
+
+
+  # WireGuard config and service
+  - name: load users for wireguard
+    include_vars:
+      file: vars/{{ wg_host }}.{{ wg_name }}.yml
+
+  - name: upload wireguard conf
+    template:
+      src: templates/{{ wg_host }}.{{ wg_name }}.conf.j2
+      dest: /etc/wireguard/{{ wg_name }}.conf
+      owner: root
+      group: root
+      mode: 0600
+    register: wg_conf
+
+  - name: activate wireguard
+    systemd:
+      name: wg-quick@{{ wg_name }}.service
+      state: started
+      enabled: yes
+
+  - name: add / remove wireguard peers
+    shell: |
+      # add new peers
+      wg addconf {{ wg_name }} <(wg-quick strip {{ wg_name }})
+
+      # remove missed peers
+      # such way, because wg setconf drop established connections
+      wg show {{ wg_name }} | grep peer | awk '{ print $2 }' | xargs -L1 -I{} bash -c 'if ! wg-quick strip {{ wg_name }} | grep -q "^PublicKey = {}$"; then wg set {{ wg_name }} peer {} remove; fi'
+    args:
+      executable: /bin/bash
+    when: wg_conf.changed
+
+
+  # Print Public Key
+  - name: read remote Public Key
+    shell: cat /etc/wireguard/{{ wg_name }}.conf.publickey
+    changed_when: false
+    register: wg_pubkey
+
+  - name: print server Public Key
+    debug:
+      msg: "Server WireGuard Public Key: {{ wg_pubkey.stdout }}"
+
+  become: true

@@ -1,0 +1,8 @@
+{% for item in users|dict2items %}
+# {{ item.key }}
+{{ item.value }} {{ item.key }}
+{# empty line between keys, but not for last key #}
+{% if not loop.last %}
+
+{% endif %}
+{% endfor %}
