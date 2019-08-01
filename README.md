@@ -1,5 +1,7 @@
 Some notes stored in [git](https://git-scm.com/) ([Markdown](https://daringfireball.net/projects/markdown/) mostly) and published on [github.com/fanatid/notes](https://github.com/fanatid/notes/).
 
+Not a native English speaker, please excuse for any language mistakes.
+
 ### Notes
 
   - [WireGuard setup guide](https://github.com/fanatid/notes/tree/master/2019-07-28-wireguard-setup-guide) (2019-07-28)
