@@ -5,6 +5,10 @@
     - [Node.js event loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810) (5 notes series) by Deepal Jayasekara
     - [v8 and thus Node.js performance](https://github.com/thlorenz/v8-perf) by Thorsten Lorenz
 
+  - [WebAssembly](https://webassembly.org/)
+
+    - [Compiling C to WebAssembly without Emscripten](https://dassur.ma/things/c-to-webassembly/) by Surma
+
   - [Docker](https://www.docker.com/), [Kubernetes](https://kubernetes.io/) and related
 
     - [What happens when I type kubectl run](https://github.com/jamiehannaford/what-happens-when-k8s) by Jamie Hannaford
