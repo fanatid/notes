@@ -1,0 +1,11 @@
+---
+- block:
+  - name: upload files
+    copy:
+      src: "files/{{ coredns_profile }}/"
+      dest: /etc/coredns/
+      owner: root
+      group: root
+      mode: 0644
+
+  become: true

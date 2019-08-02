@@ -1,0 +1,10 @@
+. {
+  errors
+  file /etc/coredns/db.example.com example.com {
+    reload 1s
+  }
+  forward . 213.133.100.100 213.133.98.98 213.133.99.99
+  cache
+  loop
+  reload 2s # 30s default, 2s min
+}

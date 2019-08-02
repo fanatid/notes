@@ -1,0 +1,80 @@
+---
+- block:
+  - name: install curl
+    apt:
+      name:
+        - curl
+      state: present
+      cache_valid_time: 86400
+
+  - name: install or update CoreDNS
+    shell: |
+      TAG={{ coredns }}
+      if [ "$TAG" == "latest" ]; then
+        TAG=$(curl "https://api.github.com/repos/coredns/coredns/releases/latest" | grep -Po '"tag_name": "v\K.*?(?=")')
+      fi
+
+      CURRENT=$(which coredns > /dev/null && /usr/local/bin/coredns --version | grep -Po '^CoreDNS-\K.*$')
+      if [ "$CURRENT" != "$TAG" ]; then
+        curl --location --silent --output - https://github.com/coredns/coredns/releases/download/v$TAG/coredns_$TAG\_linux_amd64.tgz | tar -zxO > /usr/local/bin/coredns-$TAG
+        chmod +x /usr/local/bin/coredns-$TAG
+        ln -sf coredns-$TAG /usr/local/bin/coredns
+        rm -f /usr/local/bin/coredns-$CURRENT
+
+        if [ "$CURRENT" == "" ]; then
+          mkdir -p /etc/coredns/
+          echo installed
+        else
+          echo updated
+        fi
+      fi
+    args:
+      executable: /bin/bash
+    register: coredns_bin
+    changed_when: coredns_bin.stdout in ["installed", "updated"]
+
+  - name: disable systemd-resolved port binding
+    shell: |
+      perl -pe 's/^DNSStubListener=(?!no)/#DNSStubListener=/g' -i /etc/systemd/resolved.conf
+      perl -pe 's/^#DNSStubListener=no$/DNSStubListener=no/g' -i /etc/systemd/resolved.conf
+      if ! grep -q '^DNSStubListener=no$' /etc/systemd/resolved.conf; then
+        echo 'DNSStubListener=no' >> /etc/systemd/resolved.conf
+      fi
+      systemctl restart systemd-resolved.service
+    when: coredns_bin.stdout == "installed"
+
+  - name: create user `coredns`
+    user:
+      name: coredns
+      home: /var/lib/coredns
+      comment: CoreDNS is a DNS server that chains plugins
+    when: coredns_bin.stdout == "installed"
+
+  - name: upload files
+    copy:
+      src: "files/{{ item.name }}"
+      dest: "{{ item.dest }}/{{ item.name }}"
+      owner: root
+      group: root
+      mode: 0644
+    with_items:
+      - { name: "Corefile", dest: "/etc/coredns" }
+      - { name: "resolv.conf", dest: "/etc" }
+      - { name: "coredns.service", dest: "/etc/systemd/system" }
+    when: coredns_bin.stdout == "installed"
+
+  - name: activate coredns
+    systemd:
+      name: coredns
+      state: started
+      enabled: True
+      daemon_reload: True
+    when: coredns_bin.stdout == "installed"
+
+  - name: restart coredns
+    systemd:
+      name: coredns
+      state: restarted
+    when: coredns_bin.stdout == "updated"
+
+  become: true
