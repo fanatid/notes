@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bs58": "^4.0.1",
+    "matplotnode": "^0.4.2",
+    "progress": "^2.0.3"
+  }
+}
