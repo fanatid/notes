@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Internal failover IP in Hetzner Cloud](https://github.com/fanatid/notes/tree/master/2019-08-06-hetzner-cloud-internal-failover-ip) (2019-08-06)
   - [Possible DoS of Insight](https://github.com/fanatid/notes/tree/master/2019-08-04-dos-insight-api) (2019-08-04)
   - [Own DNS in VPN](https://github.com/fanatid/notes/tree/master/2019-08-02-vpn-own-dns) (2019-08-02)
   - [WireGuard setup guide](https://github.com/fanatid/notes/tree/master/2019-07-28-wireguard-setup-guide) (2019-07-28)
