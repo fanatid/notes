@@ -18,3 +18,8 @@
   - [git](https://git-scm.com/)
 
     - [Encrypt secrets in git](https://blog.maddevs.io/secrets-513d41eaaf43) [on russian] by Oleg Puzanov
+
+  - Blogs / Notes / Sites
+
+    - [Brendan D. Gregg](http://www.brendangregg.com/)
+    - [Julia Evans](https://jvns.ca/)
