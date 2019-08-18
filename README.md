@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Load balancing with iptables and IPVS](https://github.com/fanatid/notes/tree/master/2019-08-18-loadbalancer-iptables-ipvs) (2019-08-18)
   - [Internal failover IP in Hetzner Cloud with keepalived](https://github.com/fanatid/notes/tree/master/2019-08-06-hetzner-cloud-internal-failover-ip) (2019-08-06)
   - [Possible DoS of Insight](https://github.com/fanatid/notes/tree/master/2019-08-04-dos-insight-api) (2019-08-04)
   - [Own DNS in VPN](https://github.com/fanatid/notes/tree/master/2019-08-02-vpn-own-dns) (2019-08-02)

@@ -1,0 +1,48 @@
+version: '3'
+
+services:
+  balancer0:
+    build: .
+    hostname: balancer0
+    networks:
+      loadbalancer:
+        ipv4_address: 172.31.0.2
+    cap_add:
+      - NET_ADMIN
+    command: sh -c "while true; do sleep 1; done"
+    stop_signal: SIGKILL
+    restart: on-failure
+
+  nginx0:
+    build: .
+    hostname: nginx0
+    networks:
+      loadbalancer:
+        ipv4_address: 172.31.2.0
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.conf.eth0.arp_ignore: 1
+      net.ipv4.conf.eth0.arp_announce: 2
+    command: sh -c 'ln -sf /etc/hostname /usr/share/nginx/html/index.html && nginx -g "daemon off;"'
+    restart: on-failure
+
+  nginx1:
+    build: .
+    hostname: nginx1
+    networks:
+      loadbalancer:
+        ipv4_address: 172.31.2.1
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.conf.eth0.arp_ignore: 1
+      net.ipv4.conf.eth0.arp_announce: 2
+    command: sh -c 'ln -sf /etc/hostname /usr/share/nginx/html/index.html && nginx -g "daemon off;"'
+    restart: on-failure
+
+networks:
+  loadbalancer:
+    ipam:
+      config:
+        - subnet: 172.31.0.0/16
