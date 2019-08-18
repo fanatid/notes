@@ -1,0 +1,58 @@
+version: '3'
+
+services:
+  nginx0:
+    build: .
+    hostname: nginx0
+    networks:
+      keepalived:
+        ipv4_address: 172.31.1.0
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.conf.eth0.arp_ignore: 1
+      net.ipv4.conf.eth0.arp_announce: 2
+    command: sh -c 'ip address add 172.31.2.2/32 dev lo && ln -sf /etc/hostname /usr/share/nginx/html/index.html && nginx -g "daemon off;"'
+    restart: on-failure
+
+  nginx1:
+    build: .
+    hostname: nginx1
+    networks:
+      keepalived:
+        ipv4_address: 172.31.1.1
+    cap_add:
+      - NET_ADMIN
+    sysctls:
+      net.ipv4.conf.eth0.arp_ignore: 1
+      net.ipv4.conf.eth0.arp_announce: 2
+    command: sh -c 'ip address add 172.31.2.2/32 dev lo && ln -sf /etc/hostname /usr/share/nginx/html/index.html && nginx -g "daemon off;"'
+    restart: on-failure
+
+  vs0:
+    build: .
+    hostname: vs0
+    networks:
+      keepalived:
+        ipv4_address: 172.31.2.0
+    cap_add:
+      - NET_ADMIN
+    command: sh -c 'sed -i "s/172.31.2.0/# 172.31.2.0/" /etc/keepalived/keepalived.conf && keepalived -l -D -n'
+    restart: on-failure
+
+  vs1:
+    build: .
+    hostname: vs1
+    networks:
+      keepalived:
+        ipv4_address: 172.31.2.1
+    cap_add:
+      - NET_ADMIN
+    command: sh -c 'sed -i "s/172.31.2.1/# 172.31.2.1/" /etc/keepalived/keepalived.conf && keepalived -l -D -n'
+    restart: on-failure
+
+networks:
+  keepalived:
+    ipam:
+      config:
+        - subnet: 172.31.0.0/16
