@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Kubernetes setup with kubeadm](https://github.com/fanatid/notes/tree/master/2019-08-19-kubernetes-setup-with-kubeadm) (2019-08-19)
   - [Virtual Server with keepalived](https://github.com/fanatid/notes/tree/master/2019-08-18-virtual-server-with-keepalived) (2019-08-18)
   - [Load balancing with iptables and IPVS](https://github.com/fanatid/notes/tree/master/2019-08-18-loadbalancer-iptables-ipvs) (2019-08-18)
   - [Internal failover IP in Hetzner Cloud with keepalived](https://github.com/fanatid/notes/tree/master/2019-08-06-hetzner-cloud-internal-failover-ip) (2019-08-06)
