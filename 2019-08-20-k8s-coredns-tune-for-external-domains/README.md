@@ -155,10 +155,9 @@ options ndots:5
 
 `ndots:5` is important here, from [resolf.conf man page](https://linux.die.net/man/5/resolv.conf):
 
-```
-  ndots:n
-sets a threshold for the number of dots which must appear in a name given to res_query(3) (see resolver(3)) before an initial absolute query will be made. The default for n is 1, meaning that if there are any dots in a name, the name will be tried first as an absolute name before any search list elements are appended to it. The value for this option is silently capped to 15. 
-```
+> ndots:n
+>
+> sets a threshold for the number of dots which must appear in a name given to res_query(3) (see resolver(3)) before an initial absolute query will be made. The default for n is 1, meaning that if there are any dots in a name, the name will be tried first as an absolute name before any search list elements are appended to it. The value for this option is silently capped to 15.
 
 what means that if name contains less than 5 dots, then local domains will be used first:
 
@@ -186,11 +185,11 @@ kubectl edit -n kube-system configmap coredns
 and change `Corefile`:
 
   - Add `autopath @kubernetes`. `autopath` will follow the chain of search path elements and return the first reply that is not NXDOMAIN.
-  - Change `pods` in `kubernetes` to `verified` instead `insecure`. In this case CoreDNS will check will track all existed pods. `insecure` used by default for backward compatibility with [kube-dns](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#kube-dns).
+  - Change `pods` in `kubernetes` to `verified` instead `insecure`. In this case CoreDNS will track all existed pods. `insecure` used by default for backward compatibility with [kube-dns](https://kubernetes.io/docs/tasks/administer-cluster/dns-custom-nameservers/#kube-dns).
 
 Because `Corefile` add plugin [reload](https://coredns.io/plugins/reload/) `CoreDNS` in pods will reload config itself (by default interval 30s with jitter 15s).
 
-After reloading (you can track with command like: `kubectl logs -n kube-system -f coredns-5c98db65d4-fv2jt`):
+After reloading (you can track this with command like: `kubectl logs -n kube-system -f coredns-5c98db65d4-fv2jt`):
 
 ```bash
 dnstools# dig google.com +search A
