@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [DNS in Node.js](https://github.com/fanatid/notes/tree/master/2019-08-22-nodejs-dns) (2019-08-22)
   - [CoreDNS tune for external domains in Kubernetes](https://github.com/fanatid/notes/tree/master/2019-08-20-k8s-coredns-tune-for-external-domains) (2019-08-20)
   - [Kubernetes setup with kubeadm](https://github.com/fanatid/notes/tree/master/2019-08-19-kubernetes-setup-with-kubeadm) (2019-08-19)
   - [Virtual Server with keepalived](https://github.com/fanatid/notes/tree/master/2019-08-18-virtual-server-with-keepalived) (2019-08-18)

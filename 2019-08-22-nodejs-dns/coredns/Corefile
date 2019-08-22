@@ -1,0 +1,9 @@
+. {
+  errors
+  file db.example.com example.com {
+    reload 1s
+  }
+  forward . 8.8.8.8
+  loop
+  reload 2s
+}
