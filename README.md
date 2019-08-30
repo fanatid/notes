@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Thead pool example in Node.js](https://github.com/fanatid/notes/tree/master/2019-08-30-node-uvthreads-sync-async) (2019-08-30)
   - [systemd instead pm2?](https://github.com/fanatid/notes/tree/master/2019-08-23-systemd-instead-pm2) (2019-08-23)
   - [DNS in Node.js](https://github.com/fanatid/notes/tree/master/2019-08-22-nodejs-dns) (2019-08-22)
   - [CoreDNS tune for external domains in Kubernetes](https://github.com/fanatid/notes/tree/master/2019-08-20-k8s-coredns-tune-for-external-domains) (2019-08-20)
