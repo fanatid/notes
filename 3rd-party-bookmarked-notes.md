@@ -2,6 +2,8 @@
 
   - [Node.js](https://nodejs.org/)
 
+    - [Node.js Guides](https://nodejs.org/en/docs/guides/) by Node.js Foundation
+    - [V8 JavaScript engine: Blog, Docs, JS/WASM features](https://v8.dev/)
     - [Node.js event loop](https://blog.insiderattack.net/event-loop-and-the-big-picture-nodejs-event-loop-part-1-1cb67a182810) (5 notes series) by Deepal Jayasekara
     - [v8 and thus Node.js performance](https://github.com/thlorenz/v8-perf) by Thorsten Lorenz
 
