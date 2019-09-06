@@ -26,3 +26,4 @@
 
     - [Brendan D. Gregg](http://www.brendangregg.com/)
     - [Julia Evans](https://jvns.ca/)
+    - [Vyacheslav Egorov](https://mrale.ph/)
