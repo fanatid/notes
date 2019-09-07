@@ -20,11 +20,13 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Projects
 
-  - [log2json2stdout](https://github.com/fanatid/log2json2stdout) — simple logger, just JSON to STDOUT
-  - [jsyesql](https://github.com/fanatid/jsyesql) -- JS port of [yesql](https://github.com/krisajenkins/yesql), parse of stored SQL in raw files and later usage
-  - [make-concurrent](https://github.com/fanatid/make-concurrent) -- exclusive or shared access to some resource in JS
-  - [yarn-lock-dedupe](https://github.com/fanatid/yarn-lock-dedupe) -- remover of old dependencies in yarn.lock file
-  - [hetzner-robot-mgmt](https://github.com/fanatid/hetzner-robot-mgmt) -- experimited tool for state management of dedicated servers on [Hetzner](https://www.hetzner.com/)
+  - [cryptocoinjs/secp256k1-node](https://github.com/cryptocoinjs/secp256k1-node) — [Node.js](https://nodejs.org/) bindings to [bitcoin-core/secp256k1](https://github.com/bitcoin-core/secp256k1)
+  - [indutny/bn.js](https://github.com/indutny/bn.js) — BigNum in pure JavaScript (trying resolve issues and maintain)
+  - [fanatid/log2json2stdout](https://github.com/fanatid/log2json2stdout) — simple logger, just JSON to STDOUT
+  - [fanatid/jsyesql](https://github.com/fanatid/jsyesql) -- JS port of [yesql](https://github.com/krisajenkins/yesql), parse of stored SQL in raw files and later usage
+  - [fanatid/make-concurrent](https://github.com/fanatid/make-concurrent) -- exclusive or shared access to some resource in JS
+  - [fanatid/yarn-lock-dedupe](https://github.com/fanatid/yarn-lock-dedupe) -- remover of old dependencies in yarn.lock file
+  - [fanatid/hetzner-robot-mgmt](https://github.com/fanatid/hetzner-robot-mgmt) -- experimited tool for state management of dedicated servers on [Hetzner](https://www.hetzner.com/)
 
 ### Other
 
