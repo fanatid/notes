@@ -7,7 +7,7 @@ Not a native English speaker, please excuse for any language mistakes.
   - [global.gc in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-09-node-global-gc) (2019-09-09)
   - [Package dependents from npmjs.com](https://github.com/fanatid/notes/tree/master/2019-09-01-npm-package-dependents) (2019-09-01)
   - [Virtual Machines with libvirt](https://github.com/fanatid/notes/tree/master/2019-08-31-libvirt-usage) (2019-08-31)
-  - [Thead pool example in Node.js](https://github.com/fanatid/notes/tree/master/2019-08-30-node-uvthreads-sync-async) (2019-08-30)
+  - [uvthreads sync vs async in Node.js](https://github.com/fanatid/notes/tree/master/2019-08-30-node-uvthreads-sync-async) (2019-08-30)
   - [systemd instead pm2?](https://github.com/fanatid/notes/tree/master/2019-08-23-systemd-instead-pm2) (2019-08-23)
   - [DNS in Node.js](https://github.com/fanatid/notes/tree/master/2019-08-22-nodejs-dns) (2019-08-22)
   - [CoreDNS tune for external domains in Kubernetes](https://github.com/fanatid/notes/tree/master/2019-08-20-k8s-coredns-tune-for-external-domains) (2019-08-20)

@@ -1,4 +1,4 @@
-# Thead pool example in Node.js
+# uvthreads sync vs async in Node.js
 
 Yesterday, while I watched `A Journey into Node.js Internals` by `Tamar Twena-Stern` I realized how her example of profiling Node.js is good for demonstrating thread pool in [Node.js](https://nodejs.org/).
 
