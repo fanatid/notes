@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [perf_hooks in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-12-node-perf-hooks) (2019-09-12)
   - [global.gc in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-09-node-global-gc) (2019-09-09)
   - [Package dependents from npmjs.com](https://github.com/fanatid/notes/tree/master/2019-09-01-npm-package-dependents) (2019-09-01)
   - [Virtual Machines with libvirt](https://github.com/fanatid/notes/tree/master/2019-08-31-libvirt-usage) (2019-08-31)
@@ -24,10 +25,10 @@ Not a native English speaker, please excuse for any language mistakes.
   - [cryptocoinjs/secp256k1-node](https://github.com/cryptocoinjs/secp256k1-node) — [Node.js](https://nodejs.org/) bindings to [bitcoin-core/secp256k1](https://github.com/bitcoin-core/secp256k1)
   - [indutny/bn.js](https://github.com/indutny/bn.js) — BigNum in pure JavaScript (trying resolve issues and maintain)
   - [fanatid/log2json2stdout](https://github.com/fanatid/log2json2stdout) — simple logger, just JSON to STDOUT
-  - [fanatid/jsyesql](https://github.com/fanatid/jsyesql) -- JS port of [yesql](https://github.com/krisajenkins/yesql), parse of stored SQL in raw files and later usage
-  - [fanatid/make-concurrent](https://github.com/fanatid/make-concurrent) -- exclusive or shared access to some resource in JS
-  - [fanatid/yarn-lock-dedupe](https://github.com/fanatid/yarn-lock-dedupe) -- remover of old dependencies in yarn.lock file
-  - [fanatid/hetzner-robot-mgmt](https://github.com/fanatid/hetzner-robot-mgmt) -- experimited tool for state management of dedicated servers on [Hetzner](https://www.hetzner.com/)
+  - [fanatid/jsyesql](https://github.com/fanatid/jsyesql) — JS port of [yesql](https://github.com/krisajenkins/yesql), parse of stored SQL in raw files and later usage
+  - [fanatid/make-concurrent](https://github.com/fanatid/make-concurrent) — exclusive or shared access to some resource in JS
+  - [fanatid/yarn-lock-dedupe](https://github.com/fanatid/yarn-lock-dedupe) — remover of old dependencies in yarn.lock file
+  - [fanatid/hetzner-robot-mgmt](https://github.com/fanatid/hetzner-robot-mgmt) — experimited tool for state management of dedicated servers on [Hetzner](https://www.hetzner.com/)
 
 ### Other
 

@@ -1,0 +1,10 @@
+{
+  "name": "perf_hooks-examples",
+  "version": "0.0.1",
+  "dependencies": {
+    "bindings": "^1.5.0",
+    "node-gyp": "^5.0.3"
+  },
+  "private": true,
+  "gypfile": true
+}

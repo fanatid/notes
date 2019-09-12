@@ -8,5 +8,6 @@ clean:
 	find -name terraform.tfstate.backup -type f -exec rm -rv {} +
 
 	# node.js
+	find -name build -type d -exec rm -rf {} +
 	find -name node_modules -type d -exec rm -rf {} +
 	find -name package-lock.json -type f -exec rm -rv {} +
