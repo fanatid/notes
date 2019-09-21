@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Node.js: callback when object Garbage Collected](https://github.com/fanatid/notes/tree/master/2019-09-21-node-object-gc-callback) (2019-09-21)
   - [perf_hooks in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-12-node-perf-hooks) (2019-09-12)
   - [global.gc in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-09-node-global-gc) (2019-09-09)
   - [Package dependents from npmjs.com](https://github.com/fanatid/notes/tree/master/2019-09-01-npm-package-dependents) (2019-09-01)
