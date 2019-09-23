@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Module wrapper in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-23-node-module-wrapper) (2019-09-23)
   - [Node.js: callback when object Garbage Collected](https://github.com/fanatid/notes/tree/master/2019-09-21-node-object-gc-callback) (2019-09-21)
   - [perf_hooks in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-12-node-perf-hooks) (2019-09-12)
   - [global.gc in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-09-node-global-gc) (2019-09-09)
