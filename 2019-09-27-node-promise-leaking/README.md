@@ -2,7 +2,7 @@
 
 I think in 2019 nobody need explanation what is [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), how they should be used, why they was introduced and bla-bla-bla.
 
-I never knew how Promises implemented in V8 and was tried implement something like [Go context](https://golang.org/pkg/context/) in [Node.js](https://nodejs.org/), but this was not successful. In the end I found memory leak in my application and decide learn how Promises works in V8, so I start read soure code.
+I never knew how Promises implemented in V8 and was tried implement something like [Go context](https://golang.org/pkg/context/) in [Node.js](https://nodejs.org/), but this was not successful. In the end I found memory leak in my application and decide to learn how Promises works in V8, so I start read source code.
 
 ### Simple loop and memory leak
 
@@ -47,11 +47,11 @@ async function startLoop (fn, activePromise, intervalMax, failsBeforeMax) {
 
 As you can see from `startLoop` function `activePromise` can be used twice in two different `Promise.race` per one iteration. In first *race* we call `activePromise.then()`, i.e. create new `Promise` from `activePromise` which will be resolved with `sym`. On each iteration.
 
-Service worked with this loop a lot of time, but when I tried implement context package for public usage I go carefully through code and realized that each time I add resolve function to `Promise` which never will be resolved, what this mean? That means that our object growing endlessly. That means that application can use less and less memory with each iteration for other objects and in the end can fail with `out of memory`.
+Service worked with this loop a lot of time, but when I tried to implement context package for public usage I go carefully through code and realized that each time I add resolve function to `Promise` which never will be resolved, what this mean? That means that our objects growing endlessly. That means that application can use less and less memory with each iteration for other objects and in the end can fail with `out of memory`.
 
 ### We need to go deeper
 
-Then I though how *Promise* work in V8? Is `Promise.race` is safe to use? Maybe there some hacks which I can use?
+Then I though how *Promise* work in V8? Is `Promise.race` safe to use? Maybe there some hacks which I can use?
 
 First I was need to find where `Promise` is built in V8, this is done in [src/init/bootstrapper.cc#L2298](https://github.com/nodejs/node/blob/v12.11.0/deps/v8/src/init/bootstrapper.cc#L2298). Here is `Promise.race` lines:
 
