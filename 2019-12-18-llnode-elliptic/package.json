@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "elliptic": "^6.5.2",
+    "llnode": "^2.2.0"
+  }
+}
