@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [GitHub Actions for prebuilding Node.js Addons](https://github.com/fanatid/notes/tree/master/2020-01-02-github-actions-for-prebuildify) (2020-01-02)
   - [JavaScript, sometimes, is not your friend](https://github.com/fanatid/notes/tree/master/2019-12-18-llnode-elliptic) (2019-12-18)
   - [Why you should not left promises in pending state in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-27-node-promise-leaking) (2019-09-27)
   - [Module wrapper in Node.js](https://github.com/fanatid/notes/tree/master/2019-09-23-node-module-wrapper) (2019-09-23)
