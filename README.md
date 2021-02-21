@@ -4,6 +4,7 @@ Not a native English speaker, please excuse for any language mistakes.
 
 ### Notes
 
+  - [Measure Node.js bindings performance to github.com/w3f/schnorrkel](https://github.com/fanatid/schnorrkel-node-perf) (2021-02-20)
   - [Parse bitcoin blocks with C++, Node.js and Rust](https://github.com/fanatid/rust-bitcoin-blocks) (2020-03-30)
   - [The costs of npm-scripts](https://github.com/fanatid/notes/tree/master/2020-01-12-cost-of-npm-scripts) (2020-01-12)
   - [GitHub Actions for prebuilding Node.js Addons](https://github.com/fanatid/notes/tree/master/2020-01-02-github-actions-for-prebuildify) (2020-01-02)
